@@ -1,0 +1,22 @@
+{
+  "name": "tweaker",
+  "version": "1.0.0",
+  "description": "mini-twitter",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bmsohwinc/tweaker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bmsohwinc/tweaker/issues"
+  },
+  "homepage": "https://github.com/bmsohwinc/tweaker#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
