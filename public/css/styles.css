@@ -1,0 +1,9 @@
+body {
+    text-align: center;
+    background-color: #4ff;
+}
+
+.welcome {
+    color: blue;
+    font-family: monospace;
+}
