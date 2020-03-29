@@ -1,9 +1,73 @@
-body {
-    text-align: center;
+body {    
     background-color: #4ff;
+    font-family: monospace;
+    text-align: center;
+}
+
+label {
+    text-align: left;
+}
+
+input {
+    float: right;
 }
 
 .welcome {
     color: blue;
     font-family: monospace;
+}
+
+.login_box {
+    background-color: darkgoldenrod;
+    border: 1px solid black;
+    border-radius: 10px;
+    height: 40%;
+    margin: auto;    
+    width: 50%;
+}
+
+.register_box {
+    text-align: left;
+    background-color: darkgoldenrod;
+    border: 1px solid black;
+    border-radius: 10px;
+    height: 40%;
+    margin: auto;
+    padding: 50px;    
+    width: 50%; 
+}
+
+.reg_form {
+    text-align: center;
+}
+
+.reg_submit {
+    border-radius: 4px;
+    border-style: none;
+    float: none;
+    height: 50px;
+    margin: auto;
+    width: 100px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.foo {
+    background-color: darkgoldenrod;
+    border: 1px solid black;
+    border-radius: 10px;
+    height: 40%;
+    margin: auto;    
+    width: 50%;
 }
