@@ -1,5 +1,6 @@
 // Import
 const bodyParser = require('body-parser');
+// const ejs = require("ejs");
 const express = require('express');
 const fs = require('fs');
 const mysql = require('mysql');
@@ -8,6 +9,7 @@ const mysql = require('mysql');
 const app = express();
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: false}));
+app.set('view engine', 'ejs');
 
 // database objects
 const connection = mysql.createConnection({
@@ -24,7 +26,8 @@ connection.connect();
 // ====== GETs
 // 1. Home
 app.get("/", function (req, res) {
-    res.sendFile(__dirname + "/public/htmls/index.html");
+    // res.sendFile(__dirname + "/public/htmls/index.html");
+    res.render("home", {name: 'Me hu Jean. Me hu bada taakatwar.!'});
 });
 
 // 2. db - testing
@@ -37,7 +40,7 @@ app.get("/db", function(req, res) {
     try {
         that_query = fs.readFileSync(file_path, 'utf-8');            
     } catch (e) {
-        console.log('Errot was: ', e.stack);
+        console.log('Error was: ', e.stack);
     } 
 
     console.log(that_query);
@@ -61,27 +64,43 @@ app.get("/db", function(req, res) {
 
 // 3. Login
 app.get("/login", function(req, res) {
-    res.sendFile(__dirname + "/public/htmls/login.html");
+    res.render("login");
 });
 
 
 // 4. Register
 app.get("/register", function(req, res) {
-    res.sendFile(__dirname + "/public/htmls/register.html");
+    res.render("register");
 });
+
+// 5. Profile 
+app.get("/profile", function(req, res) {
+
+    var test_data = {
+        user_handle : "tourist",
+        name : "gennady",
+        password : "******",
+        place : "belarus",
+        mobile_number : 111111111
+    };
+
+    res.render("profile", {user_data : test_data});
+});
+
+
 
 
 // ====== POSTs
 // 1. Login
 app.post("/login", function(req, res) {
     console.log(req.body);
-    res.sendFile(__dirname + "/public/htmls/foo.html");
+    res.render("foo");
 });
 
 // 2. Register
 app.post("/register", function(req, res) {
     console.log(req.body);
-    res.sendFile(__dirname + "/public/htmls/foo.html");
+    res.redirect("/profile");
 });
 
 

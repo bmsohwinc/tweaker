@@ -1,0 +1,23 @@
+<%- include("header") -%>
+
+<div class="profile-box">
+    
+    <%var user_data_keys = Object.keys(user_data)%>
+
+    <table id="profile-table">
+
+    <% for (var i = 0; i < user_data_keys.length; i++) {%>
+
+        <tr>
+            <td class="profile_user_key"><%= user_data_keys[i] %></td>
+            <td><%= user_data[user_data_keys[i]] %></td>
+        </tr>
+
+    <%}%>
+
+    </table>
+
+</div>
+
+
+<%- include("footer") -%>

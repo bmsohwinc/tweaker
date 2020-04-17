@@ -1,7 +1,8 @@
 body {    
-    background-color: #4ff;
+    background-color: #fff591;
     font-family: monospace;
     text-align: center;
+    padding: 0%;
 }
 
 label {
@@ -22,7 +23,8 @@ input {
     border: 1px solid black;
     border-radius: 10px;
     height: 40%;
-    margin: auto;    
+    margin: auto;
+    padding: 2rem;    
     width: 50%;
 }
 
@@ -50,18 +52,45 @@ input {
     width: 100px;
 }
 
+.profile-box {
+    background-color: #639a67;
+    color: #2c003e;
+    height: 100%;
+    /* top: 200px; */
+    width: 50%;
+    margin: 200px auto;
+}
 
+#profile-table {
+    height: 100%;
+    width: 100%;
+}
 
+#logo_img {
+    border-radius: 10px;
+    height: 50px;
+    width: 50px;
+}
 
+#title {
+    color: fuchsia; 
+    font-size: 2rem;   
+    font-weight: bold;
+}
 
+header {
+    display: flex;
+}
 
+#left_header {
+    /* display: inline; */
+    float: left;
+}
 
-
-
-
-
-
-
+#right_header {
+    /* display: inline; */
+    float: right;
+}
 
 .foo {
     background-color: darkgoldenrod;
@@ -70,4 +99,11 @@ input {
     height: 40%;
     margin: auto;    
     width: 50%;
+}
+
+#footer_wala {
+    color: #000;
+    font-size: 1rem;
+    font-weight: bolder;
+    text-align: center;    
 }
