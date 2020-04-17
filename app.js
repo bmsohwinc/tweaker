@@ -64,14 +64,30 @@ app.get("/db", function(req, res) {
 
 // 3. Login
 app.get("/login", function(req, res) {
-    res.sendFile(__dirname + "/public/htmls/login.html");
+    res.render("login");
 });
 
 
 // 4. Register
 app.get("/register", function(req, res) {
-    res.sendFile(__dirname + "/public/htmls/register.html");
+    res.render("register");
 });
+
+// 5. Profile 
+app.get("/profile", function(req, res) {
+
+    var test_data = {
+        user_handle : "tourist",
+        name : "gennady",
+        password : "******",
+        place : "belarus",
+        mobile_number : 111111111
+    };
+
+    res.render("profile", {user_data : test_data});
+});
+
+
 
 
 // ====== POSTs
@@ -84,7 +100,7 @@ app.post("/login", function(req, res) {
 // 2. Register
 app.post("/register", function(req, res) {
     console.log(req.body);
-    res.render("foo");
+    res.redirect("/profile");
 });
 
 

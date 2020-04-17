@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tutorial on Sketchpad</title>
+	<style type="text/css">
+		body {
+			background-color: #30475e;
+			color: #f4e04d;
+			font-family: monospace;
+		}
+
+		a {
+			color: lightgreen;
+		}
+
+	</style>
+</head>
+<body>
+
+	<h1>Using Sketchpad</h1>
+
+	<p>Go to this link: <a href="https://sketch.io/sketchpad/">here</a></p>
+	<p>Bas khelo!</p>
+
+	<hr>
+
+	<h1 style="text-align: center;">Plan</h1> <hr>
+
+
+	<h2 style="text-align: center;">Front End</h2>
+
+	<ul>
+		<li>Refer the sketches</li>
+		<li>Coloring and stuffs are upto you</li>
+		<li>Should have the basic functionality</li>
+	</ul>
+
+
+	<!-- -------------------------------------------------------------------------------------------------------------- -->
+
+
+	<br>
+	<hr style="width: 50%">
+	<br>
+
+	<h3>For /profile page: </h3>
+	
+	<h4>Case 1: User opens his own profile page:</h4>
+	<ul>
+		<li>3 parts</li>
+		<ul>
+			<li>His picture and name and edit profile button on top</li>
+			<li>His other details (place, dob, phone, email, followers, following, etc) in the middle</li>
+			<li>His actions (tweets / comments / likes at the bottom)</li>
+		</ul>
+		<br>
+		<li>The second and third part must be scrollable (just that it doesnot occupy the entire space)</li>
+		<br>
+		<li>In the bottom pane, create 3 columns:</li>
+		<ul>
+			<li>1st column for tweets user has made</li>
+			<li>2nd column for comments user has made </li>
+			<li>3rd col for posts on which likes were given</li>
+		</ul>
+
+	</ul>
+
+	<h4>Case 2: User opens other person's profile page:</h4>
+	<ul>
+		<li>Layout will be similar to the previous description</li> <br>
+		<li>Except that, instead of Edit Profile button, there will be a Follow button</li>
+	</ul>
+	<br>
+
+
+	<!-- -------------------------------------------------------------------------------------------------------------- -->
+
+	<br>
+	<hr style="width: 50%">
+	<br>
+	<h3>For /tweet page: </h3>
+	<p>Very minimal page</p>
+	<ul>
+		<li>Main part is the text box</li> <br>
+		<li>Then a button to upload image</li> <br>
+		<li>Then a button to add tags</li> <br>
+		<li>Then a button to post it</li>
+	</ul>
+
+	<!-- -------------------------------------------------------------------------------------------------------------- -->
+
+	<br>
+	<hr style="width: 50%">
+	<br>
+	<h3>For /comment page: </h3>
+	<p>Another minimal page</p>
+	<p>2 panes exist - the top and bottom </p>
+	<ul>
+		<li>Top pane will hold the tweet content to which we will be commenting</li> <br>
+		<li>Bottom pane will hold the similar layout of the `/tweet` page</li> <br>
+		<li>Except, you will be commenting here</li>
+	</ul>
+
+
+	<!-- -------------------------------------------------------------------------------------------------------------- -->
+
+	<br>
+	<hr style="width: 50%">
+	<br>
+	<h3>For /home page: </h3>
+
+	<p>This is by far the most complicated one!</p>
+	<p>Refer to the image. But that is a later one.</p>
+	<p>For now, try to implement these:</p>
+
+	<ul>
+		<li>Main feed area. Should display the tweet cards with these details:</li>
+		<ul>
+			<li>Username of who posted</li>
+			<li>time of posting</li>
+			<li>content of the tweet</li>
+			<li>`Like` button</li>
+			<li>Comment box (let it be a button for now)</li>
+			<ul>
+				<li>Clicking this comment button will direct the user to the `/comment` page</li>	
+			</ul>				
+		</ul>
+
+		<br>
+		<li>Right Column, showing a metadata about the user</li> <br>
+		<li>And a button for `Tweet` - Composing a new tweet</li>
+		<ul>
+			<li>clicking this will direct the user to a `/tweet` page</li>
+		</ul> <br>
+
+		<li><b>Ignore</b> the suggestion cards for now</li>  <br>
+		<li><b>Ignore</b> the top search bar (let it be there, but let it do nothing!)</li> <br>
+		<li>The top right options bar should have : edit profile, logout options</li> <br>
+		<li>The top bar should have button for `Find new people`</li> <br>
+		<li>The real challenge:</li>
+		<ul>
+			<li>Reloading the feed and not to exhaust the feed with huge data.</li>
+		</ul>
+
+	</ul> <br>
+
+	<hr>
+
+	<h2 style="text-align: center;">Back End</h2>
+
+	<p>The GET routes:</p>
+
+	<ul>
+		<li>/</li>
+		<ul>
+			<li>shown when user visits page without login</li>
+			<li>will ask the user to login / regiter</li>
+		</ul> <br>
+
+		<li>/home</li>
+		<ul>
+			<li>shown once the user logs in / registers</li>
+			<li>will have the feed, profile metadata, etc</li>
+			<li>should appropriately query the data and send it to the FE</li>
+		</ul> <br>
+		
+		<li>/profile</li>
+		<ul>
+			<li>should query the user data to the FE</li>
+			<li>that includes : </li>
+			<ul>
+				<li>basic personal data</li>
+				<li>metadata of tweets made</li>
+				<li>metadata of comments made</li>
+				<li>metadata of tweets to which likes were given</li>
+			</ul>
+		</ul> <br>
+
+		<li>/login</li>
+		<ul>
+			<li>Just send the page</li>
+			<li>no data sent</li>
+			<li>if error is detected, report it</li>
+		</ul> <br>
+		
+
+		<li>/register</li>
+		<ul>
+			<li>Same. Just send the page</li>
+		</ul> <br>
+
+
+		<li>/tweet</li>
+		<ul>
+			<li>Just send the page</li>
+		</ul> <br>
+		
+		<li>/comment</li>
+		<ul>
+			<li>Send the page</li>
+			<li>But also display the tweet data on which the comment is to be made</li>
+		</ul> <br>
+		
+
+		<li>Not found 4xx or 5xx</li>
+		<ul>
+			<li>Sent whenever something else is requested by the user</li>
+		</ul> <br>
+
+	</ul>
+
+	<br>
+	<hr style="width: 50%">
+	<br>
+
+
+	<p>The POST routes:</p>
+
+	<ul>
+		<li>/tweet</li>
+		<ul>
+			<li>get user tweet</li>	
+			<li><b>Disable</b> image upload for now</li>
+			<li>Take only text tweets</li>
+			<li>once posted, redirect to home page, <b>with their tweet as the most recect one</b> </li>
+		</ul> <br>
+
+		<li>/comment</li>
+		<ul>
+			<li>get user comment</li>	
+			<li><b>Disable</b> image upload for now</li>
+			<li>Take only text comment</li>
+			<li>once posted, redirect to home page, <b>with their commented tweet as the most recect one</b> </li>
+		</ul> <br>
+
+		<li>/register</li>
+		<ul>
+			<li>get the user details</li>	
+			<li>report errors, if any</li>
+			<li>direct to home page, if successful</li>
+		</ul> <br>
+
+		<li>/login</li>
+		<ul>
+			<li>just get username and password</li>
+			<li>report error, if any</li>
+			<li>direct to home page, if successful</li>
+		</ul> <br>
+
+		<li>/profile</li>
+		<ul>
+			<li>Shown when user wants to edit details</li>
+			<li>Get details</li>
+			<li>Save to DB</li>
+			<li>Acknowledge back</li>
+		</ul> <br>
+	</ul> <br>
+
+
+
+	<br>
+
+	<hr>
+	<h1 style="text-align: center;">Resources</h1> <hr>
+	<ul>
+		<li>
+			<a href="https://medium.com/@maison.moa/create-a-simple-weather-app-using-node-js-express-and-react-54105094647a">Simple Full Stack weather app</a>
+		</li>
+	</ul>
+
+
+
+</body>
+</html>
