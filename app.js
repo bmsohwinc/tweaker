@@ -86,7 +86,10 @@ app.get("/profile", function(req, res) {
 
     res.render("profile", {user_data : test_data});
 });
-
+//6. About
+app.get("/about",function(req,res){
+	res.render("about");
+});
 
 
 
