@@ -1,5 +1,5 @@
 body {    
-    background-color: #fff591;
+    background-color: lemonchiffon;
     font-family: monospace;
     text-align: center;
     padding: 0%;
@@ -19,7 +19,7 @@ input {
 }
 
 .login_box {
-    background-color: darkgoldenrod;
+    background-color: tomato;
     border: 1px solid black;
     border-radius: 10px;
     height: 40%;
@@ -30,7 +30,7 @@ input {
 
 .register_box {
     text-align: left;
-    background-color: darkgoldenrod;
+    background-color: tomato;
     border: 1px solid black;
     border-radius: 10px;
     height: 40%;
@@ -73,7 +73,7 @@ input {
 }
 
 #title {
-    color: mediumseagreen; 
+    color: crimson; 
     font-size: 2rem;   
     font-weight: bold;
 }
@@ -93,7 +93,7 @@ header {
 }
 
 .foo {
-    background-color: darkgoldenrod;
+    background-color: tomato;
     border: 1px solid black;
     border-radius: 10px;
     height: 40%;
