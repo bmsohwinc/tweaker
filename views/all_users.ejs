@@ -1,0 +1,18 @@
+<%- include('header') -%>
+
+<% if (users.length > 0) { %>
+    <% users.forEach((user, index) => { %>
+        <% let profile_url = '/profile/' + user.user_id %>
+        <div class="user_card">
+            <a href = <%=profile_url%>>
+                <h3>@<%= user.user_name %></h3>
+            </a>
+            <hr>
+            <p><%= user.full_name %></p>
+            <p>From: <%= user.place %></p>
+            <p>Says: <%= user.about %></p>
+        </div>
+    <% }) %>
+<%}%>
+
+<%- include('footer') -%>

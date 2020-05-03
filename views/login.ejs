@@ -2,12 +2,13 @@
 
 <h1>Login to Tweaker</h1>
 
+<h2 style="color: red;"><%= err_msg %></h2>
+
+
 <div class="login_box">
     <form action="/login" method="POST">
-        <label>Username: </label>
-        <input type="text" name="username"> <br>
-        <label>Password: </label>
-        <input type="password" name="password"> <br>
+        <input type="username" name="username" placeholder="username" required>
+        <input type="password" name="password" placeholder="password" required>
         <input type="submit">
     </form>
 </div>

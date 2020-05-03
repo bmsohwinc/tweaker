@@ -9,9 +9,9 @@ label {
     text-align: left;
 }
 
-input {
+/* input {
     float: right;
-}
+} */
 
 .welcome {
     color: blue;
@@ -100,6 +100,16 @@ header {
     margin: auto;    
     width: 50%;
 }
+
+.user_card {
+    background-color: #b2ebf2;
+    border-radius: 10px;
+    width: 50%;
+    text-align: left;
+    padding: 1rem;
+    margin: 1rem auto;
+}
+
 
 #footer_wala {
     color: #000;

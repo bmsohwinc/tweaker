@@ -7,21 +7,6 @@
     <% for (var i = 0; i < user_data_keys.length; i++) {%>
         <p><%= user_data_keys[i] %> : <%= user_data[user_data_keys[i]] %></p>
     <%}%>
-    <br>
-
-    <% if (showEdit === true) {%>
-        <form action="/" method="POST">
-            <button>Edit Profile</button>
-        </form>
-    <%} else {%>
-        <form action="/" method="POST">
-            <button>Follow</button>
-        </form>
-    <%}%>
-
-    <br>
-    
-
 
 </div>
 
