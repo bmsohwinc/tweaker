@@ -1,0 +1,11 @@
+<%- include("header") -%>
+
+<h1>So, what's up <%= name %> ?</h1>
+
+    <form id="tweet_form" action="/tweet" method="POST">
+        <button>Tweet</button>
+    </form>
+    <p>Your Tweet: </p>
+    <textarea name="tweet_data" form="tweet_form" id="tweet_txa" cols="50" rows="50" placeholder="Tho likho na ..."></textarea>
+
+<%- include("footer") -%>

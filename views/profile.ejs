@@ -1,4 +1,4 @@
-<%- include("header") -%>
+<%- include('header') -%>
 
 <div class="profile-box">
     
@@ -10,13 +10,20 @@
     <br>
 
     <% if (showEdit === true) {%>
-        <form action="/" method="POST">
+        <form action="/edit_profile" method="GET">
             <button>Edit Profile</button>
         </form>
     <%} else {%>
-        <form action="/" method="POST">
-            <button>Follow</button>
-        </form>
+
+        <%if (showFollow === true) {%>
+            <form action="/follow_new_user" method="POST">
+                <input type="hidden" name="user_id" value=<%= user_id%> >
+                <button>Follow</button>
+            </form>
+        <%} else {%>
+            <button>Following</button>
+        <%}%>
+        
     <%}%>
 
     <br>
@@ -26,4 +33,4 @@
 </div>
 
 
-<%- include("footer") -%>
+<%- include('footer') -%>

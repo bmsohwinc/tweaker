@@ -1,1 +1,12 @@
-select count(*) cnt from foo;
++-------------------------------------------------------------------------------------------------------------------+---------+---------------+-----------------+-----------+
+| tweet_msg                                                                                                         | user_id | date_of_tweet | number_of_likes | user_name |
++-------------------------------------------------------------------------------------------------------------------+---------+---------------+-----------------+-----------+
+| Bon Jour. This is the first tweet. Hope this finds you in a good condition. Stay Safe. Bye!                       |       1 | 2020-04-18    |               0 | Idk       |
+| Hello tweakeratti! Go Corona Go!!                                                                                 |       1 | 2020-04-10    |               0 | Idk       |
+| Let us play CS GO tonight. What do you all say. Come on vote!!!!!                                                 |       2 | 2020-04-11    |               0 | Fyi       |
+| Like, I am new to this platform. How to use it? What will I get from this???                                      |       3 | 2020-04-12    |               0 | LOL       |
+| Ohhhh.. Got it. We connect with each other here. So, the entire world becomes our friend. Great. Now I love it!!! |       3 | 2020-04-13    |               0 | LOL       |
+| If I snap all tweakers will vanish in attoseconds.                                                                |       8 | 2020-05-03    |               0 | Joker     |
+| aaaaaaa                                                                                                           |       6 | 2020-05-03    |               0 | z         |
++-------------------------------------------------------------------------------------------------------------------+---------+---------------+-----------------+-----------+
+7 rows in set (0.00 sec)

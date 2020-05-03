@@ -1,0 +1,40 @@
+<%- include('header') -%>
+
+<% if (tweets.length > 0) { %>
+    <div class="tweet_display_box">
+        <% tweets.forEach((tweet, index) => { %>
+            <% let profile_url = '/profile/' + tweet.user_id %>
+            <div class="tweet_card">
+                <h4>
+                    <a href = <%=profile_url%> >
+                        @<%= tweet.user_name %>
+                    </a>   
+                    <form action="/liked_tweet" method="POST">
+                        <input type="hidden" name="tweet_id" value=<%= tweet.tweet_id%> >
+                        <input type="hidden" name="user_id" value=<%= tweet.user_id%> >
+                       <button class="upvoter" type="submit" style="float: right;">
+                            <%= tweet.number_of_likes %>
+                       </button>
+                    </form>                                 
+                </h4>          
+                <p><%= (tweet.date_of_tweet) %></p>
+                <hr>            
+                
+                <p><%= tweet.tweet_msg %></p>
+                <hr>
+
+                <% let comment_url = '/comment/' + tweet.tweet_id %>
+                <textarea name="comment_data" form="comment_form" class="comment_txa" placeholder="Comment ..."></textarea>
+                <form id="comment_form" method="POST" action=<%= comment_url%> >
+                    <button>Comment</button>        
+                </form>
+
+                <% let full_tweet_url = '/one_full_tweet/' + tweet.tweet_id %>
+                <p><a href=<%= full_tweet_url%>> More...</a></p>
+            </div>
+        <% }) %>
+    </div>
+<%} else {%>
+    <h1>All Tweakeratti birds are sleeping still!! 😴</h1>
+<%}%>
+<%- include('footer') -%>

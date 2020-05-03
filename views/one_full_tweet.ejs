@@ -1,0 +1,46 @@
+<%- include('header') -%>
+
+<!-- <div> -->
+    <% let profile_url = '/profile/' + tweet.user_id %>
+    <div class="tweet_card big_t">
+        <h4>
+            <a href = <%=profile_url%> >
+                @<%= tweet.user_name %>
+            </a>   
+            <form action="/liked_tweet" method="POST">
+                <input type="hidden" name="tweet_id" value=<%= tweet.tweet_id%> >
+                <input type="hidden" name="user_id" value=<%= tweet.user_id%> >
+                <button class="upvoter" type="submit" style="float: right;">
+                    <%= tweet.number_of_likes %>
+                </button>
+            </form>                                 
+        </h4>          
+        <p><%= (tweet.date_of_tweet) %></p>
+        <hr>            
+        
+        <p><%= tweet.tweet_msg %></p>
+        <hr>
+
+        <% let comment_url = '/comment/' + tweet.tweet_id %>
+        <textarea name="comment_data" form="comment_form2" class="comment_txa" placeholder="Comment ..."></textarea>
+        <form id="comment_form2" method="POST" action=<%= comment_url%> >
+            <button>Comment</button>        
+        </form>
+    </div>
+
+    <div id="comment_display_box">
+        <% if (comments.length > 0) {%>
+            <% comments.forEach((comment, index) => { %>
+                <div class="comment_card">
+                    <h4><%=comment.comment_data%></h4>
+                    <p><%=comment.date_of_comment%></p>
+                </div>            
+            <%})%>
+        <%} else {%>
+            <h2>No birdies have commented yet! 😴</h2>
+            <h2>Be the first to comment! 😀</h2>
+        <%}%>
+    </div>
+
+<!-- </div> -->
+<%- include('footer') -%>

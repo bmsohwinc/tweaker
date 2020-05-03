@@ -5,11 +5,11 @@ body {
     padding: 0%;
 }
 
-label {
-    text-align: left;
+/* label {
+    float: left;
 }
 
-/* input {
+input {
     float: right;
 } */
 
@@ -22,14 +22,13 @@ label {
     background-color: darkgoldenrod;
     border: 1px solid black;
     border-radius: 10px;
-    height: 40%;
+    height: 60%;
     margin: auto;
     padding: 2rem;    
     width: 50%;
 }
 
 .register_box {
-    text-align: left;
     background-color: darkgoldenrod;
     border: 1px solid black;
     border-radius: 10px;
@@ -53,10 +52,11 @@ label {
 }
 
 .profile-box {
-    background-color: #639a67;
+    background-color: #f1d1d1;
     color: #2c003e;
     height: 100%;
-    /* top: 200px; */
+    padding: 1rem;
+    border-radius: 10px;
     width: 50%;
     margin: 200px auto;
 }
@@ -111,9 +111,58 @@ header {
 }
 
 
+
 #footer_wala {
     color: #000;
     font-size: 1rem;
     font-weight: bolder;
     text-align: center;    
+}
+
+#tweet_txa {
+    max-width: 200px;
+    max-height: 200px;
+}
+
+.tweet_display_box {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.tweet_card {
+    background-color: #b2ebf2;
+    border-radius: 10px;
+    width: 300px;
+    text-align: left;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.upvoter {
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    overflow: hidden;
+    outline:none;
+}
+
+.comment_txa {
+    width: 100%;
+    background-color: beige;
+}
+
+.big_t {
+    width: 70%;
+}
+
+.comment_card {
+    background-color: #f7f7f7;
+    width: 80%;
+    border-radius: 5px;
+}
+
+#comment_display_box {
+    text-align: center;
 }
