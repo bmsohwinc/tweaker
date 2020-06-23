@@ -47,6 +47,7 @@
 
 ## Usage
 Here's the basic philosophy:
+
 0. Install Node.JS in your local machine
 1. Clone this repository (the top right green button)
 2. Open using your fav IDE ([VS Code](https://code.visualstudio.com/) is great!)
