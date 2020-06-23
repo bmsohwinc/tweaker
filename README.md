@@ -44,3 +44,25 @@
     - Edit or Delete a Tweet
 - Suggestions
     - 2nd order neighbours are suggested for following
+
+## Usage
+Here's the basic philosophy:
+1. Clone this repository (the top right green button)
+2. Open using your fav IDE (VS Code is great!)
+3. Install npm packages mentioned in the package.json
+4. Setup mysql on your local machine 
+5. Create a user with following creds
+    - **username** : tweaker
+    - **password** : wethree
+6. Provide all privileges to the user
+7. Once you re-login to the mysql session as this new user, create a database by the name **for_lab**
+8. Then in this database run the sql files mentioned in the src/db/ddl folder. This will create the necessary tables.
+9. Now,
+    - Your node_modules are installed
+    - DB is ready
+10. So, open up the VS Code (or any IDE or no IDE also!) terminal in the project dir; cd into the src folder; then run
+    `nodemone index.js`.
+11. This will start the tweaker server on your local maching on PORT 3000.
+12. Start playing with the site in your fav browser
+
+**N.B. : The user credentials for MySQL, the database name and the PORT - all are for prelim usage. If you use other creds for these, make sure you do the necessary changes in the src/index.js file**
